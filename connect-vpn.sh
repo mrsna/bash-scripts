@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# This script automatically manages a VPN connection based on the current Wi-Fi network.
+# It checks every 30 seconds to see if the system is connected to a specified Wi-Fi network.
+# If connected to the target Wi-Fi, it disconnects the VPN; if not, it connects the VPN.
+# 
+# Configuration:
+# To ensure the script functions correctly, you need to set the following variables:
+#   - `TARGET_WIFI`: The name of the target Wi-Fi network you want to monitor (e.g., "MyHomeWiFi").
+#   - `WG_CONNECTION`: The name of the VPN connection you wish to manage (e.g., "MyVPNConnection").
+
 TARGET_WIFI="WIFI-NAME"
 WG_CONNECTION="WG-NAME"
 CHECK_INTERVAL=30  # seconds
