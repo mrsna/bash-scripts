@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # This script organizes files in a specified directory by moving each file 
 # into a new subdirectory named after the file (without the extension). 

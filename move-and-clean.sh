@@ -1,4 +1,5 @@
 #!/bin/bash
+set -euo pipefail
 
 # This script organizes files within a specified directory by moving all 
 # files from its subdirectories into the main directory. It then cleans up 
