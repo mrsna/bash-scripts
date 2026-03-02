@@ -23,15 +23,7 @@ setBackground()
   FILE=$(echo "$FILES" | grep "bg-change_$1_" | grep -v NoMoon | shuf -n 1)
   echo "BG-CHANGE: Set new background: $FILE"
 
-  qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript "
-  var allDesktops = desktops();
-  for (i=0;i<allDesktops.length;i++) {
-      d = allDesktops[i];
-      d.wallpaperPlugin = 'org.kde.image';
-      d.currentConfigGroup = Array('Wallpaper', 'org.kde.image', 'General');
-      d.writeConfig('Image', 'file://$FILE');
-  }
-  "
+  plasma-apply-wallpaperimage $FILE
 }
 
 while true; do
